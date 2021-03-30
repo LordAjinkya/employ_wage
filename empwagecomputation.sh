@@ -50,3 +50,18 @@ else
 fi
 echo $workhours
 }
+
+do
+        randomnum=$((RANDOM%3))
+        if [ $randomnum -eq $isfulltime ]
+        then
+                emphr=8
+        elif [ $randomnum -eq $isparttime ]
+        then
+                emphr=4
+        else
+                emphr=0
+        fi
+        salary=$(($salary+($emphr*$salaryperhr))
+done
+echo "salary is :" $salary
