@@ -96,3 +96,20 @@ salary=$((salary+($emphr*$salaryperhr)))
 done
 echo "Salary is :" $salary
 
+while [ $noofdays -lt 20 ] && [ $noofhours -lt 100 ]
+	do
+		attendance=$((RANDOM%3))
+		workhours="$( workhours $(($attendance)) )"
+		case $attendance in
+			0)
+				dailywage=0
+				;;
+			1)
+				dailywage=$(($wageperhr*$parttimehr))
+				parttimecount=$(($parttimecount+1))
+				if [ $parttimecount -eq 2 ]
+				then
+					echo "parttime salary:"$salary
+				fi
+	done
+echo "salary for 100 days"$salary
