@@ -29,3 +29,24 @@ do
 	salary=$(($salary+($emphr*$salaryperhr))
 done
 echo "salary is :" $salary
+
+wagepermonth=0
+noofdays=1
+noofhours=0
+parttimecount=0
+
+
+function workhours()
+{
+local attendance=$1
+if [ $attendance -eq 0 ]
+then
+	workhours=0
+elif [ $attendance -eq 1 ]
+then
+	workhours=$parttimehr
+else
+	workhours=$fulldailyhr
+fi
+echo $workhours
+}
