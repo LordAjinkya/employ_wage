@@ -8,3 +8,4 @@ then
 else
 	echo "employee is absent"
 fi
+echo "2nd branch \n"
