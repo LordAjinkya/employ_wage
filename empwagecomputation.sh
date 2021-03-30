@@ -65,3 +65,34 @@ do
         salary=$(($salary+($emphr*$salaryperhr))
 done
 echo "salary is :" $salary
+
+isfulltime=1
+isparttime=2
+isfulltime=200
+parttimehr=100
+salary=0
+randomnum=$((RANDOM%3))
+if [ $randomnum -eq $isfulltime ]
+then
+	salary=$(($salaryperhr*$fulltimehr))
+elif [ $randomnum -eq $isparttime ]
+then
+	salary=$(($salaryperhr*$parttimehr))
+else
+	salary=0
+fi
+echo "salary :" $salary
+
+for((day=0;day=100;day++))
+do
+	randomnum=$((RANDOM%3))
+	if [ $randomnum -eq $isfulltime ]
+	then
+		emphr=100
+	else
+		emphr=0
+	fi
+salary=$((salary+($emphr*$salaryperhr)))
+done
+echo "Salary is :" $salary
+
