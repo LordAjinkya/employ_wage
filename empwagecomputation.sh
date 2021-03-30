@@ -8,4 +8,24 @@ then
 else
 	echo "employee is absent"
 fi
-echo "2nd branch \n"
+
+isfulltime=1
+ispartttime=2
+salaryperhr=100
+emphr=0
+salary=0
+for((day=0;day<20;day++))
+do
+	randomnum=$((RANDOM%3))
+	if [ $randomnum -eq $isfulltime ]
+	then
+		emphr=8
+	elif [ $randomnum -eq $isparttime ]
+	then
+		emphr=4
+	else
+		emphr=0
+	fi
+	salary=$(($salary+($emphr*$salaryperhr))
+done
+echo "salary is :" $salary
